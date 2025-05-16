@@ -1,12 +1,15 @@
 import { Slot } from "expo-router";
 import React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
+import { AuthProvider } from "../contexts/AuthContext";
 
 export default function RootLayout() {
   return (
-    <SafeAreaView style={styles.container}>
-      <Slot />
-    </SafeAreaView>
+    <AuthProvider>
+      <SafeAreaView style={styles.container}>
+        <Slot />
+      </SafeAreaView>
+    </AuthProvider>
   );
 }
 
