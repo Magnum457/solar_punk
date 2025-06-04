@@ -5,37 +5,37 @@ const plants = [
   {
     id: "1",
     name: "Espada-de-São-Jorge",
-    benefit: "Purifica o ar, resistente.",
-    cultivation: "Sol indireto, rega semanal.",
-    image: require("../assets/images/Espada.jpg"), // imagem local 
+    benefit: "Purifica o ar. Resistente e fácil de realizar manutenção.",
+    cultivation: "Forma de cultivo: sol indireto, rega semanal.",
+    image: require("../assets/images/Espada.jpg"),
   },
   {
     id: "2",
     name: "Lírio-da-paz",
-    benefit: "Filtra toxinas do ambiente.",
-    cultivation: "Ambiente úmido e luz difusa.",
-    image: require("../assets/images/Lírio-da-paz.png"), // imagem local 
+    benefit: "Filtra toxinas do ambiente e melhora a qualidade do ar.",
+    cultivation: "Forma de cultivo: ambiente úmido e luz difusa.",
+    image: require("../assets/images/Lírio-da-paz.png"),
   },
   {
     id: "3",
     name: "Jiboia",
-    benefit: "Absorve poluentes, fácil de cuidar.",
-    cultivation: "Luz moderada, rega quando o solo estiver seco.",
+    benefit: "Absorve poluentes, ideal para ambientes internos, fácil de cuidar.",
+    cultivation: "Forma de cultivo: luz moderada, rega quando o solo estiver seco.",
     image: require("../assets/images/jiboia.png"),
   },
   {
     id: "4",
     name: "Samambaia",
-    benefit: "Aumenta a umidade do ar.",
-    cultivation: "Ambientes úmidos, sombra parcial.",
-    image:  require("../assets/images/Samambaia.png"),
+    benefit: "Aumenta a umidade do ar, traz sensação de frescor.",
+    cultivation: "Forma de cultivo: ambientes úmidos, sombra parcial.",
+    image: require("../assets/images/Samambaia.png"),
   },
   {
     id: "5",
     name: "Babosa (Aloe Vera)",
-    benefit: "Melhora o ar, uso medicinal.",
-    cultivation: "Sol direto, rega espaçada.",
-    image:  require("../assets/images/Babosa.png"),
+    benefit: "Melhora o ar, com propriedades medicinais e cicatrizantes.",
+    cultivation: "Forma de cultivo: sol direto, rega espaçada.",
+    image: require("../assets/images/Babosa.png"),
   },
 ];
 
@@ -47,21 +47,21 @@ export default function CatalogScreen() {
           <Text style={[styles.cell, styles.headerCell, { textAlign: "center" }]}>
             Imagem
           </Text>
-          <Text style={[styles.cell, styles.headerCell]}>Nome</Text>
+          <Text style={[styles.cell, styles.headerCell, { textAlign: "center" }]}>
+            Nome
+          </Text>
           <Text style={[styles.cell, styles.headerCell]}>Benefícios</Text>
-          <Text style={[styles.cell, styles.headerCell]}>Recomendações</Text>
+          <Text style={[styles.cell, styles.headerCell]}>Forma de cultivo</Text>
         </View>
 
         {plants.map((item) => (
           <View key={item.id} style={styles.row}>
             <View style={[styles.cell, styles.imageCell]}>
-              <Image
-                source={item.image}
-                style={styles.image}
-                resizeMode="cover"
-              />
+              <Image source={item.image} style={styles.image} resizeMode="cover" />
             </View>
-            <Text style={styles.cell}>{item.name}</Text>
+            <View style={styles.nameCellContainer}>
+              <Text style={styles.nameCell}>{item.name}</Text>
+            </View>
             <Text style={styles.cell}>{item.benefit}</Text>
             <Text style={styles.cell}>{item.cultivation}</Text>
           </View>
@@ -107,5 +107,14 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 4,
+  },
+  nameCellContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 8,
+  },
+  nameCell: {
+    textAlign: "center",
   },
 });
