@@ -19,8 +19,10 @@ const plants = [
   {
     id: "3",
     name: "Jiboia",
-    benefit: "Absorve poluentes, ideal para ambientes internos, fácil de cuidar.",
-    cultivation: "Forma de cultivo: luz moderada, rega quando o solo estiver seco.",
+    benefit:
+      "Absorve poluentes, ideal para ambientes internos, fácil de cuidar.",
+    cultivation:
+      "Forma de cultivo: luz moderada, rega quando o solo estiver seco.",
     image: require("../assets/images/jiboia.png"),
   },
   {
@@ -39,15 +41,19 @@ const plants = [
   },
 ];
 
-export default function CatalogScreen() {
+export default function CatalogoScreen() {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.table}>
         <View style={[styles.row, styles.headerRow]}>
-          <Text style={[styles.cell, styles.headerCell, { textAlign: "center" }]}>
+          <Text
+            style={[styles.cell, styles.headerCell, { textAlign: "center" }]}
+          >
             Imagem
           </Text>
-          <Text style={[styles.cell, styles.headerCell, { textAlign: "center" }]}>
+          <Text
+            style={[styles.cell, styles.headerCell, { textAlign: "center" }]}
+          >
             Nome
           </Text>
           <Text style={[styles.cell, styles.headerCell]}>Benefícios</Text>
@@ -57,7 +63,11 @@ export default function CatalogScreen() {
         {plants.map((item) => (
           <View key={item.id} style={styles.row}>
             <View style={[styles.cell, styles.imageCell]}>
-              <Image source={item.image} style={styles.image} resizeMode="cover" />
+              <Image
+                source={item.image}
+                style={styles.image}
+                resizeMode="cover"
+              />
             </View>
             <View style={styles.nameCellContainer}>
               <Text style={styles.nameCell}>{item.name}</Text>

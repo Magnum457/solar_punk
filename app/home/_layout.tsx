@@ -14,29 +14,11 @@ export default function HomeLayout() {
         }}
       />
       <Tabs.Screen
-        name="perfil"
+        name="catalogo"
         options={{
-          title: "Perfil",
+          title: "Catálogo",
           tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="person" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="profile"
-        options={{
-          title: "Profile",
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="list" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="config"
-        options={{
-          title: "Config",
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="settings" size={size} color={color} />
+            <MaterialIcons name="book" size={size} color={color} />
           ),
         }}
       />
